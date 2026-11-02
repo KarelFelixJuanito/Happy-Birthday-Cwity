@@ -4,7 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#efe2ca">
-<title>a little secret â™¡</title>
+<title>a little secret &#9825;</title>
+<meta name="description" content="A little birthday something made only for cwityyy &mdash; from pelduduu.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="assets/icon-512.png">
+<link rel="apple-touch-icon" href="assets/icon-512.png">
+<!-- link previews. After you deploy, change the og:image + twitter:image
+     to the full address, e.g. https://your-site.netlify.app/assets/og-cover.png -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="happy birthday, cwityyy &#9825;">
+<meta property="og:description" content="A little secret from pelduduu &mdash; made only for you.">
+<meta property="og:image" content="assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="happy birthday, cwityyy &#9825;">
+<meta name="twitter:description" content="A little secret from pelduduu &mdash; made only for you.">
+<meta name="twitter:image" content="assets/og-cover.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -632,7 +648,7 @@ img,svg{display:block}
 }
 
 /* ============================================================
-   6. FINALE â€” BUBU & DUDU
+   6. FINALE — BUBU & DUDU
    ============================================================ */
 .scene--finale{
   background:radial-gradient(120% 90% at 50% 8%,#fdf5e6 0%,#fae6da 48%,#f4d6cd 100%);
@@ -1130,6 +1146,441 @@ img,svg{display:block}
 }
 
 /* ============================================================
+   8. THE SKY WE SHARE — night epilogue
+   ============================================================ */
+.scene--stars{
+  background:
+    radial-gradient(76% 58% at 50% 10%, #3c2738 0%, rgba(60,39,56,0) 64%),
+    radial-gradient(70% 52% at 18% 92%, #2b1e33 0%, rgba(43,30,51,0) 62%),
+    linear-gradient(180deg,#241627 0%,#2a1a2b 46%,#211520 100%);
+  overflow-y:auto;overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:contain;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(232,205,163,.3) transparent;
+}
+.scene--stars::-webkit-scrollbar{width:6px}
+.scene--stars::-webkit-scrollbar-thumb{background:rgba(232,205,163,.22);border-radius:3px}
+
+.skyField{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.skyStar{
+  position:absolute;border-radius:50%;background:#f8ebd4;
+  animation:skyTw 4s ease-in-out infinite;
+  animation-delay:var(--td,0s);animation-duration:var(--tw,4s);
+}
+@keyframes skyTw{0%,100%{opacity:.18;transform:scale(.85)}50%{opacity:.95;transform:scale(1)}}
+.skySpark{
+  position:absolute;color:#f0d8ae;font-size:9px;line-height:1;
+  animation:skyTw 6s ease-in-out infinite;
+  animation-delay:var(--td,0s);animation-duration:var(--tw,6s);
+}
+.skyVeil{
+  position:absolute;left:50%;bottom:-34%;transform:translateX(-50%);
+  width:130vw;height:74vh;pointer-events:none;
+  background:radial-gradient(50% 50% at 50% 50%, rgba(197,141,149,.2), rgba(197,141,149,0) 70%);
+}
+.skyShootLayer{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.shoot{
+  position:absolute;width:clamp(90px,14vw,160px);height:1.5px;border-radius:2px;
+  background:linear-gradient(90deg,rgba(247,232,208,0) 0%,rgba(247,232,208,.62) 72%,#fff 100%);
+  filter:drop-shadow(0 0 7px rgba(247,232,208,.8));
+  transform-origin:right center;
+  animation:shootAcross 1.25s cubic-bezier(.25,.6,.35,1) forwards;
+}
+@keyframes shootAcross{
+  0%{opacity:0;transform:translate3d(0,0,0) rotate(15deg) scaleX(.25)}
+  14%{opacity:1}
+  100%{opacity:0;transform:translate3d(66vw,30vh,0) rotate(15deg) scaleX(1)}
+}
+.skyDust{
+  position:fixed;z-index:78;width:3px;height:3px;border-radius:50%;
+  background:#f7e7cd;box-shadow:0 0 8px rgba(247,231,205,.9);
+  pointer-events:none;
+  animation:skyDustFly .9s ease-out forwards;
+}
+@keyframes skyDustFly{
+  0%{opacity:1;transform:translate(0,0) scale(1)}
+  100%{opacity:0;transform:translate(var(--tx,0),var(--ty,-40px)) scale(.3)}
+}
+
+.skyWrap{
+  position:relative;z-index:2;
+  width:min(880px,92vw);margin:0 auto;
+  padding:clamp(30px,6.6vh,66px) 0 clamp(74px,12vh,116px);
+}
+.skyIntro{
+  display:flex;flex-direction:column;justify-content:center;
+  min-height:calc(100vh - clamp(20px,4vh,40px));
+  min-height:calc(100svh - clamp(20px,4vh,40px));
+  padding-bottom:clamp(16px,3.6vh,34px);
+}
+.skyHead{text-align:center}
+.skyHead .eyebrow{color:#c2a78d}
+.skyTitle{
+  font-family:var(--script);font-weight:400;
+  font-size:clamp(50px,10vh,104px);line-height:.9;color:#f8e8d1;
+  margin:clamp(6px,1.4vh,14px) 0 clamp(4px,1vh,10px);
+  text-shadow:0 0 46px rgba(240,214,170,.28);
+}
+.skySub{
+  font-family:var(--body);font-style:italic;
+  font-size:clamp(15px,2.1vh,20px);line-height:1.6;color:#cfb5a6;
+  max-width:min(560px,94%);margin:0 auto;
+}
+.skyStage{
+  position:relative;width:min(600px,100%);
+  margin:clamp(14px,3vh,28px) auto 0;
+  touch-action:manipulation;
+}
+.skyArt{width:100%;height:auto;display:block;overflow:visible;user-select:none}
+.skyHeartLine{
+  fill:none;stroke:#e8cda3;stroke-width:1;
+  stroke-opacity:.5;stroke-linejoin:round;stroke-linecap:round;
+}
+.scene--stars.is-active .skyHeartLine{
+  stroke-dasharray:1500;stroke-dashoffset:1500;
+  animation:skyDraw 2.6s cubic-bezier(.4,.1,.2,1) .35s forwards;
+}
+@keyframes skyDraw{to{stroke-dashoffset:0}}
+.skyHeartStar{
+  fill:#f8e8cf;filter:url(#skyGlowF);
+  transform-box:fill-box;transform-origin:center;
+}
+.skyTap{
+  position:absolute;pointer-events:none;color:#f6e2c2;
+  font-size:14px;line-height:1;transform:translate(-50%,-50%) scale(.4);
+  animation:skyTapPop 1.05s ease-out forwards;
+  text-shadow:0 0 12px rgba(248,232,207,.85);
+}
+@keyframes skyTapPop{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}
+  22%{opacity:1}
+  100%{opacity:0;transform:translate(-50%,-50%) translateY(-16px) scale(1.15)}
+}
+.skyHint{
+  margin-top:clamp(6px,1.4vh,12px);text-align:center;
+  font-family:var(--hand);font-size:clamp(13px,1.8vh,16px);color:#b0908c;
+}
+.skyCue{
+  margin-top:clamp(20px,3.4vh,34px);text-align:center;
+  font-family:var(--sans);font-size:8px;letter-spacing:.3em;text-transform:uppercase;
+  color:#9c8374;opacity:0;
+}
+.scene--stars.is-active .skyCue{animation:cueIn .9s ease 2.2s forwards}
+@keyframes cueIn{from{opacity:0;transform:translateY(-5px)}to{opacity:.9;transform:none}}
+.skyCue span{display:inline-block;margin-left:6px;font-size:10px;color:#c3a78c}
+
+/* the last gift */
+.giftWrap{margin-top:clamp(40px,7.4vh,74px);text-align:center}
+.giftBox{
+  position:relative;display:block;
+  width:clamp(158px,21vh,192px);height:clamp(106px,14.2vh,130px);
+  margin:clamp(16px,2.6vh,26px) auto 0;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1);
+  filter:drop-shadow(0 22px 30px rgba(0,0,0,.46));
+}
+.giftBox:hover{transform:translateY(-5px)}
+.giftBox:active{transform:translateY(-2px)}
+.giftBox .gGlow{
+  position:absolute;left:50%;top:56%;width:210%;height:170%;
+  transform:translate(-50%,-50%);pointer-events:none;
+  background:radial-gradient(50% 50% at 50% 50%,rgba(233,207,162,.24),rgba(233,207,162,0) 72%);
+}
+.giftBox .gBody{
+  position:absolute;left:0;right:0;top:21%;bottom:0;
+  border-radius:3px 3px 7px 7px;
+  background:linear-gradient(180deg,#fbeed6,#e9d3ad);
+  box-shadow:inset 0 -10px 16px -10px rgba(120,85,50,.4);
+}
+.giftBox .gLid{
+  position:absolute;left:-4%;right:-4%;top:0;height:25%;
+  border-radius:4px;
+  background:linear-gradient(180deg,#fdf6e4,#efdab6);
+  box-shadow:0 7px 13px -9px rgba(70,42,22,.7);
+  transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .45s;
+}
+.giftBox .gRibbonV{
+  position:absolute;left:50%;top:0;bottom:0;width:13%;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,#b87c86,#e3b6ba 46%,#a86d78);
+  opacity:.96;
+}
+.giftBox .gRibbonH{
+  position:absolute;left:0;right:0;top:21%;height:12%;
+  background:linear-gradient(180deg,#c68d96,#a86d78);
+  opacity:.96;
+}
+.giftBox .gBow{
+  position:absolute;left:50%;top:-27%;width:54%;
+  transform:translateX(-50%);
+  transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .45s;
+}
+.giftBox .gBow svg{width:100%;height:auto;display:block;overflow:visible}
+.giftBox.open .gLid{transform:translate(-7%,-40%) rotate(-9deg);opacity:.9}
+.giftBox.open .gBow{transform:translate(-56%,-46%) rotate(-13deg);opacity:.85}
+.giftBox.open{transform:translateY(-2px)}
+.giftHint{
+  margin-top:clamp(12px,2.2vh,18px);
+  font-family:var(--hand);font-size:clamp(13px,1.8vh,16px);color:#b0908c;
+}
+
+/* the promises card */
+.giftPop{
+  position:fixed;inset:0;z-index:86;
+  display:grid;place-items:center;
+  padding:clamp(14px,4vw,40px);
+  background:rgba(20,12,20,.84);
+  backdrop-filter:blur(9px);
+  opacity:0;visibility:hidden;
+  transition:opacity .45s ease,visibility .45s;
+}
+.giftPop.open{opacity:1;visibility:visible}
+.giftCard{
+  position:relative;width:min(560px,94vw);max-height:88vh;overflow:auto;
+  padding:clamp(26px,4vh,40px) clamp(18px,3.4vw,34px) clamp(22px,3.4vh,30px);
+  text-align:center;
+  background:linear-gradient(180deg,#fefaf0 0%,#f7ecd9 100%);
+  border:1px solid rgba(160,128,90,.3);
+  box-shadow:0 44px 90px -40px rgba(0,0,0,.85);
+  transform:translateY(16px) rotate(-.4deg);
+  transition:transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.giftPop.open .giftCard{transform:none}
+.giftCard:before{content:"";position:absolute;inset:9px;border:1px solid rgba(160,128,90,.16);pointer-events:none}
+.giftCard .eyebrow{color:#ab927e}
+.giftCard h3{
+  font-family:var(--script);font-weight:400;
+  font-size:clamp(27px,4.2vh,38px);line-height:1.02;color:#6b3d47;
+  margin:6px 0 clamp(12px,2vh,18px);
+}
+.giftFlower{width:26px;margin:0 auto 9px}
+.giftFlower svg{width:100%;height:auto;display:block}
+.wishList{
+  max-width:420px;margin:0 auto;text-align:left;
+  border-top:1px solid rgba(160,120,80,.2);
+}
+.wishList .row{
+  display:flex;gap:12px;align-items:baseline;
+  padding:10px 2px 11px;
+  border-bottom:1px dashed rgba(160,120,80,.24);
+}
+.wishList .row:last-child{border-bottom:0}
+.wishList .n{
+  font-family:var(--sans);font-size:8px;letter-spacing:.16em;
+  color:#c0a685;flex:0 0 auto;padding-top:2px;
+}
+.wishList .w{
+  font-family:var(--body);font-style:italic;
+  font-size:clamp(14px,1.9vh,17px);line-height:1.45;color:#5b4a3c;
+}
+.wishMore{
+  font-family:var(--hand);font-size:clamp(14px,1.9vh,17px);
+  color:#a3877a;margin-top:clamp(10px,1.8vh,14px);
+}
+.giftCard .laterSign{text-align:right;margin-top:clamp(12px,2vh,18px)}
+.giftRestart{
+  margin-top:clamp(14px,2.4vh,20px);
+  font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;
+  color:#a08770;border-bottom:1px solid rgba(160,135,112,.35);padding-bottom:2px;
+  transition:color .3s,border-color .3s;
+}
+.giftRestart:hover{color:#6b3d47;border-color:rgba(107,61,71,.5)}
+
+.skyWish{display:flex;flex-direction:column;align-items:center;margin-top:clamp(16px,3vh,26px)}
+.wishBtn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:11px 24px;border-radius:999px;
+  border:1px solid rgba(233,207,162,.42);
+  background:rgba(246,232,207,.06);
+  color:#f3dfc0;font-family:var(--sans);font-size:9.5px;
+  letter-spacing:.24em;text-transform:uppercase;
+  transition:background .35s,box-shadow .35s,transform .35s,border-color .35s;
+}
+.wishBtn:hover{
+  background:rgba(246,232,207,.14);border-color:rgba(233,207,162,.7);
+  box-shadow:0 0 40px rgba(233,207,162,.16);transform:translateY(-2px);
+}
+.wishBtn .sp{font-size:11px;color:#e9cfa2}
+.wishLine{
+  min-height:1.7em;margin-top:clamp(8px,1.6vh,14px);
+  text-align:center;font-family:var(--hand);
+  font-size:clamp(16px,2.2vh,20px);line-height:1.4;color:#e7cdb4;
+  opacity:0;transform:translateY(6px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.wishLine.on{opacity:1;transform:none}
+
+.laterWrap{margin-top:clamp(38px,6.5vh,70px);text-align:center}
+.laterKicker{
+  font-family:var(--sans);font-size:8.5px;letter-spacing:.34em;
+  text-transform:uppercase;color:#b79c85;
+}
+.laterNotes{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(10px,1.6vw,18px);margin-top:clamp(14px,2.6vh,22px);
+}
+.laterNote{
+  position:relative;text-align:left;
+  padding:clamp(15px,2.4vh,21px) clamp(13px,1.6vw,18px) clamp(13px,2vh,17px);
+  border-radius:14px;
+  background:linear-gradient(180deg,#fdf8ec 0%,#f6e9d2 100%);
+  border:1px solid rgba(233,207,162,.32);
+  box-shadow:0 16px 30px -24px rgba(0,0,0,.6);
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s;
+}
+.laterNote:nth-child(1){transform:rotate(-1.3deg)}
+.laterNote:nth-child(2){transform:rotate(.8deg)}
+.laterNote:nth-child(3){transform:rotate(-.6deg)}
+.laterNote:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 22px 34px -22px rgba(0,0,0,.66)}
+.laterNote .seal{
+  position:absolute;top:-10px;right:12px;
+  width:26px;height:26px;border-radius:50%;
+  display:grid;place-items:center;
+  background:radial-gradient(circle at 34% 28%,#e3a8b0,#9c5b6b);
+  box-shadow:0 3px 8px rgba(70,26,36,.4);
+  color:#fbe9df;font-size:10px;
+}
+.laterNote .k{
+  display:block;font-family:var(--sans);font-size:7.5px;letter-spacing:.3em;
+  text-transform:uppercase;color:#b09a78;
+}
+.laterNote .t{
+  display:block;font-family:var(--script);font-weight:400;
+  font-size:clamp(20px,2.6vh,26px);line-height:1.05;color:#6b3d47;margin-top:4px;
+}
+.laterNote .a{
+  display:block;font-family:var(--hand);font-size:13px;color:#b08a8e;margin-top:8px;
+}
+.laterNote:hover .a{color:#9a6a70}
+
+.skyFoot{margin-top:clamp(30px,5.6vh,54px);text-align:center}
+.skyFootLine{
+  font-family:var(--script);font-size:clamp(28px,4.6vh,42px);
+  line-height:1.1;color:#f0d8bd;
+}
+.skyFootSub{
+  font-family:var(--body);font-style:italic;
+  font-size:clamp(14px,1.9vh,17px);color:#bfa493;
+  margin-top:clamp(6px,1.2vh,10px);
+}
+.skyBtns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:clamp(16px,3vh,26px)}
+.skyBtn{
+  padding:10px 20px;border-radius:999px;
+  border:1px solid rgba(233,207,162,.28);
+  background:rgba(246,232,207,.05);
+  color:#e6cbb2;font-family:var(--sans);font-size:9px;
+  letter-spacing:.22em;text-transform:uppercase;
+  transition:background .3s,transform .3s,border-color .3s;
+}
+.skyBtn:hover{background:rgba(246,232,207,.12);border-color:rgba(233,207,162,.55);transform:translateY(-2px)}
+.skySign{
+  font-family:var(--script);font-size:clamp(19px,2.8vh,26px);
+  color:#d9b596;margin-top:clamp(14px,2.6vh,22px);
+}
+
+/* note-for-later overlay */
+.laterPop{
+  position:fixed;inset:0;z-index:84;
+  display:grid;place-items:center;
+  padding:clamp(16px,4vw,40px);
+  background:rgba(22,14,22,.82);
+  backdrop-filter:blur(9px);
+  opacity:0;visibility:hidden;
+  transition:opacity .45s ease,visibility .45s;
+}
+.laterPop.open{opacity:1;visibility:visible}
+.laterCard{
+  position:relative;width:min(450px,92vw);max-height:88vh;overflow:auto;
+  padding:clamp(28px,4.6vh,44px) clamp(22px,3.6vw,40px) clamp(24px,4vh,36px);
+  background:linear-gradient(180deg,#fefaf0 0%,#f8eeda 100%);
+  border:1px solid rgba(160,128,90,.3);
+  box-shadow:0 44px 90px -40px rgba(0,0,0,.8);
+  transform:translateY(14px) rotate(-.5deg);
+  transition:transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.laterPop.open .laterCard{transform:none}
+.laterCard:before{content:"";position:absolute;inset:8px;border:1px solid rgba(160,128,90,.16);pointer-events:none}
+.laterCard .eyebrow{color:#ab927e}
+.laterCard h3{
+  font-family:var(--script);font-weight:400;
+  font-size:clamp(30px,4.6vh,42px);line-height:1;color:#6b3d47;
+  margin:6px 0 clamp(10px,1.8vh,16px);
+}
+.laterBody{
+  font-family:var(--hand);font-size:clamp(17px,2.4vh,21px);
+  line-height:1.55;color:#5b5040;
+}
+.laterSign{font-family:var(--script);font-size:clamp(17px,2.2vh,21px);color:#8d6a4e;margin-top:clamp(12px,2vh,18px)}
+.laterClose{
+  position:absolute;top:10px;right:10px;z-index:2;
+  width:30px;height:30px;border-radius:50%;
+  display:grid;place-items:center;color:#8d6a4e;
+  border:1px solid rgba(140,100,90,.24);background:rgba(255,251,243,.7);
+  transition:background .3s;
+}
+.laterClose:hover{background:#fff8ec}
+.laterClose svg{width:11px;height:11px}
+.laterFlower{width:24px;margin-bottom:9px;opacity:.9}
+.laterFlower svg{width:100%;height:auto;display:block}
+
+/* cursor petals */
+.cursorPetal{
+  position:fixed;z-index:54;pointer-events:none;opacity:0;
+  animation:cursorDrift 1.15s cubic-bezier(.25,.6,.4,1) forwards;
+  will-change:transform,opacity;
+}
+@keyframes cursorDrift{
+  0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--r0,0deg)) scale(.8)}
+  18%{opacity:.8}
+  100%{opacity:0;transform:translate(calc(-50% + var(--dx,0px)), calc(-50% + 38px)) rotate(calc(var(--r0,0deg) + 90deg)) scale(.55)}
+}
+
+/* gallery -> sky */
+.galEndBtns .galEndStar{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:11px 22px;border-radius:999px;
+  background:linear-gradient(180deg,#3f2433 0%,#2c1724 100%);
+  border:1px solid rgba(233,207,162,.34);
+  color:#f7e6cf;
+  box-shadow:0 20px 36px -24px rgba(60,26,34,.9);
+}
+.galEndBtns--star{margin-bottom:10px}
+.galEndBtns + .galEndBtns{margin-top:10px}
+.galEndBtns .galEndStar:hover{
+  background:linear-gradient(180deg,#4a2a3b,#341b29);
+  box-shadow:0 26px 42px -24px rgba(60,26,34,.95);
+}
+.galEndBtns .galEndStar span{font-size:11px;color:#e8cda3}
+
+/* panel shortcut */
+.pi-stars{
+  margin-top:8px;text-align:left;position:relative;overflow:hidden;
+  padding:12px 13px;
+  background:radial-gradient(130% 110% at 82% -10%, #4a3149 0%, #2f1c2f 58%, #251626 100%);
+  border:1px solid rgba(233,207,162,.2);
+}
+.pi-stars h3{position:relative;font-family:var(--serif);font-weight:400;font-size:16px;color:#f7e6cf;margin:0}
+.pi-stars p{position:relative;font-family:var(--body);font-size:11.5px;line-height:1.4;color:#c0a48f;margin-top:2px}
+.pi-stars .skyMini{position:absolute;inset:0;pointer-events:none;opacity:.9}
+
+@media (max-width:740px){
+  .skyWrap{width:92vw;padding-top:clamp(24px,6vh,40px)}
+  .skyTitle{font-size:clamp(46px,13vw,72px)}
+  .skySub{font-size:15px}
+  .skyStage{width:100%}
+  .laterNotes{
+    grid-template-columns:1fr;gap:12px;
+    max-width:calc(100% - 52px);
+    margin-left:auto;margin-right:auto;
+  }
+  .laterNote{margin-top:6px}
+  .skyFootLine{font-size:clamp(26px,8vw,36px)}
+  .laterCard{padding-top:44px}
+  .giftCard{padding-top:44px}
+  .giftBox{width:150px;height:102px}
+}
+
+/* ============================================================
    BLOOM TRANSITION
    ============================================================ */
 .bloom{
@@ -1248,14 +1699,14 @@ body.unlocked .moreBtn{opacity:1;visibility:visible}
 .pi-note p{font-family:var(--sans);font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:#958b74;margin-top:2px}
 .pi-note .time{margin-left:auto;font-family:var(--sans);font-size:9px;color:#8b8064}
 .pi-bouquet{
-  margin-top:8px;position:relative;overflow:hidden;height:112px;
-  background:linear-gradient(180deg,#4a2335,#2f1522);
-  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
-  padding-top:14px;
+  margin-top:8px;position:relative;overflow:hidden;height:96px;
+  background:linear-gradient(120deg,#4a2335,#2f1522);
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+  padding:0 14px;text-align:left;
 }
-.pi-bouquet h3{font-family:var(--serif);font-weight:400;font-size:16px;color:#f7ead9}
-.pi-bouquet p{font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:#c79aa7;margin-top:3px}
-.pi-bouquet .bouquetArt{position:absolute;bottom:-6px;width:110px}
+.pi-bouquet h3{font-family:var(--serif);font-weight:400;font-size:16px;color:#f7ead9;position:relative}
+.pi-bouquet p{font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:#c79aa7;margin-top:3px;position:relative}
+.pi-bouquet .bouquetArt{position:absolute;right:2px;bottom:-6px;width:90px;opacity:.95}
 .scrim{position:fixed;inset:0;z-index:56;background:rgba(40,22,30,.16);opacity:0;visibility:hidden;transition:.4s}
 .scrim.on{opacity:1;visibility:visible}
 
@@ -1600,10 +2051,103 @@ body.unlocked .soundBtn{opacity:.85;visibility:visible}
       <h3 class="galEndTitle">one day we&rsquo;ll be old, and this will still be my favourite album.</h3>
       <p class="galEndBody">Thank you for being the person in every photo I want to keep.</p>
       <p class="galSign">always yours, pelduduu</p>
+      <div class="galEndBtns galEndBtns--star">
+        <button id="galStars" class="galEndStar">one last page &mdash; look up <span>&uarr;</span></button>
+      </div>
       <div class="galEndBtns">
         <button id="galLetter">read the letter again</button>
         <button id="galTop">back to the top</button>
       </div>
+    </footer>
+  </div>
+</section>
+
+<!-- ======================= NIGHT SKY ======================= -->
+<section class="scene scene--stars" id="scene-stars" aria-label="The sky we share">
+  <div class="skyField" id="skyField" aria-hidden="true"></div>
+  <div class="skyShootLayer" id="skyShootLayer" aria-hidden="true"></div>
+  <div class="skyWrap">
+    <div class="skyIntro">
+      <header class="skyHead">
+        <p class="eyebrow">after the last page</p>
+        <h2 class="skyTitle">the sky we share</h2>
+        <p class="skySub">Wherever the night finds us, it&rsquo;s the same sky &mdash; and every star in it is still yours.</p>
+      </header>
+
+      <div class="skyStage" id="skyStage" role="button" tabindex="0" aria-label="Tap the sky to make it twinkle">
+        <svg class="skyArt" id="skyArt" viewBox="0 0 800 550" role="img" aria-label="A heart drawn in stars above her name"></svg>
+      </div>
+      <p class="skyHint">tap anywhere in the sky</p>
+
+      <div class="skyWish">
+        <button class="wishBtn" id="wishBtn">make a wish <span class="sp">&#10022;</span></button>
+        <p class="wishLine" id="wishLine" aria-live="polite"></p>
+        <p class="skyCue">there&rsquo;s a little more, just below <span>&darr;</span></p>
+      </div>
+    </div>
+
+    <div class="laterWrap">
+      <p class="laterKicker">three little notes, for the days after today</p>
+      <div class="laterNotes" id="laterNotes">
+        <button class="laterNote" data-later="miss">
+          <span class="seal">&#10022;</span>
+          <span class="k">open when</span>
+          <span class="t">you miss me</span>
+          <span class="a">tap to open</span>
+        </button>
+        <button class="laterNote" data-later="heavy">
+          <span class="seal">&#10022;</span>
+          <span class="k">open when</span>
+          <span class="t">the day is heavy</span>
+          <span class="a">tap to open</span>
+        </button>
+        <button class="laterNote" data-later="sleep">
+          <span class="seal">&#10022;</span>
+          <span class="k">open when</span>
+          <span class="t">you can&rsquo;t sleep</span>
+          <span class="a">tap to open</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="giftWrap" id="giftWrap">
+      <p class="laterKicker">and one last thing</p>
+      <button class="giftBox" id="giftBox" aria-label="Open the last gift">
+        <span class="gGlow" aria-hidden="true"></span>
+        <span class="gBody" aria-hidden="true"></span>
+        <span class="gLid" aria-hidden="true"></span>
+        <span class="gRibbonV" aria-hidden="true"></span>
+        <span class="gRibbonH" aria-hidden="true"></span>
+        <span class="gBow" aria-hidden="true">
+          <svg viewBox="0 0 120 64">
+            <defs>
+              <linearGradient id="bowA" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#efc9cd"/><stop offset="1" stop-color="#b87c86"/>
+              </linearGradient>
+              <linearGradient id="bowB" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#dfa9b0"/><stop offset="1" stop-color="#a46873"/>
+              </linearGradient>
+            </defs>
+            <path d="M54 40C40 14 8 6 8 22c0 14 26 22 46 18Z" fill="url(#bowA)"/>
+            <path d="M66 40C80 14 112 6 112 22c0 14-26 22-46 18Z" fill="url(#bowA)"/>
+            <path d="M50 43c-5 10-12 16-18 18 5 1 9 0 12-2 5-4 8-10 9-14Z" fill="url(#bowB)"/>
+            <path d="M70 43c5 10 12 16 18 18-5 1-9 0-12-2-5-4-8-10-9-14Z" fill="url(#bowB)"/>
+            <ellipse cx="60" cy="40" rx="12" ry="10" fill="url(#bowB)"/>
+            <ellipse cx="56" cy="37" rx="4" ry="3" fill="#f7dfe2" opacity=".7"/>
+          </svg>
+        </span>
+      </button>
+      <p class="giftHint">tap it &mdash; there&rsquo;s something inside.</p>
+    </div>
+
+    <footer class="skyFoot">
+      <p class="skyFootLine">same sky, always.</p>
+      <p class="skyFootSub">Happy birthday, my love. Here&rsquo;s to every year after this one.</p>
+      <div class="skyBtns">
+        <button class="skyBtn" id="skyBack">back to our photos</button>
+        <button class="skyBtn" id="skyLetter">read the letter again</button>
+      </div>
+      <p class="skySign">always yours, pelduduu</p>
     </footer>
   </div>
 </section>
@@ -1650,6 +2194,11 @@ body.unlocked .soundBtn{opacity:.85;visibility:visible}
       <img src="assets/photos/web/photo-08.jpg" alt="" loading="lazy">
     </div>
   </button>
+  <button class="panelItem pi-stars" data-go="stars">
+    <div class="skyMini" id="skyMini" aria-hidden="true"></div>
+    <h3>The sky we share</h3>
+    <p>one last page, for the night.</p>
+  </button>
 </div>
 
 <!-- the note that plays the last song -->
@@ -1686,6 +2235,36 @@ body.unlocked .soundBtn{opacity:.85;visibility:visible}
   <button class="gvBtn gvNext" id="gvNext" aria-label="Next photo">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9.5 5 7 7-7 7"/></svg>
   </button>
+</div>
+
+<!-- a little note for later -->
+<div class="laterPop" id="laterPop" role="dialog" aria-modal="true" aria-label="A note for later" aria-hidden="true">
+  <div class="laterCard" id="laterCard" tabindex="-1">
+    <button class="laterClose" id="laterClose" aria-label="Close the note">
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m2.4 2.4 7.2 7.2m0-7.2L2.4 9.6"/></svg>
+    </button>
+    <div class="laterFlower" id="laterFlower" aria-hidden="true"></div>
+    <p class="eyebrow" id="laterKicker">open when</p>
+    <h3 id="laterTitle"></h3>
+    <p class="laterBody" id="laterBody"></p>
+    <p class="laterSign">&mdash; pelduduu</p>
+  </div>
+</div>
+
+<!-- the little promises -->
+<div class="giftPop" id="giftPop" role="dialog" aria-modal="true" aria-label="Inside the box" aria-hidden="true">
+  <div class="giftCard" id="giftCard" tabindex="-1">
+    <button class="laterClose" id="giftClose" aria-label="Close the gift">
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m2.4 2.4 7.2 7.2m0-7.2L2.4 9.6"/></svg>
+    </button>
+    <div class="giftFlower" id="giftFlower" aria-hidden="true"></div>
+    <p class="eyebrow">inside the box</p>
+    <h3>four things I want <br>to do with you.</h3>
+    <div class="wishList" id="wishList"></div>
+    <p class="wishMore">that&rsquo;s it for now &mdash; I&rsquo;ll keep adding to it.</p>
+    <p class="laterSign">&mdash; pelduduu</p>
+    <button class="giftRestart" id="giftRestart">start from the beginning</button>
+  </div>
 </div>
 
 <button class="soundBtn" id="soundBtn" aria-label="Toggle sound">
@@ -2792,7 +3371,7 @@ const BG = {
 /* ============================================================
    NAVIGATION
    ============================================================ */
-const ORDER = ['cake', 'env', 'songs', 'letter', 'bouquet', 'finale', 'gallery'];
+const ORDER = ['cake', 'env', 'songs', 'letter', 'bouquet', 'finale', 'gallery', 'stars'];
 let current = 'lock';
 let unlocked = false;
 
@@ -2813,8 +3392,11 @@ function go(name){
   }
   if (to.scrollTop) to.scrollTop = 0;
   updateArrows();
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeMeta) themeMeta.setAttribute('content', name === 'stars' ? '#241627' : '#efe2ca');
   if (name === 'letter') replayLetter();
   if (name === 'gallery') setTimeout(function(){ watchAlbum(); primeGallery(); }, 80);
+  if (name === 'stars') setTimeout(function(){ shootingStar(); }, 900);
   if (name === 'finale' && !finaleSeen){
     finaleSeen = true;
     setTimeout(function(){ confetti(80); }, 650);
@@ -2840,6 +3422,10 @@ document.addEventListener('keydown', function(e){
   if (current === 'lock') return;
   const viewer = document.getElementById('galViewer');
   if (viewer && viewer.classList.contains('open')) return;
+  const later = document.getElementById('laterPop');
+  if (later && later.classList.contains('open')) return;
+  const gift = document.getElementById('giftPop');
+  if (gift && gift.classList.contains('open')) return;
   if (e.key === 'ArrowDown' || e.key === 'PageDown'){ e.preventDefault(); step(1); }
   if (e.key === 'ArrowUp' || e.key === 'PageUp'){ e.preventDefault(); step(-1); }
 });
@@ -3010,7 +3596,7 @@ function bloomOff(){
 }
 
 /* ============================================================
-   CAKE â€” press & hold
+   CAKE — press & hold
    ============================================================ */
 let holding = false, blown = false, holdTimeout = null, holdRAF = null, holdStart = 0;
 const HOLD_MS = 2200;
@@ -3543,6 +4129,13 @@ function showPhoto(i){
   $('#gvCount').textContent = String(gvIndex + 1).padStart(2, '0') + ' / ' + albumAll.length;
   galViewer.classList.add('open');
   galViewer.setAttribute('aria-hidden', 'false');
+  // quietly fetch the neighbours so swiping feels instant
+  [gvIndex + 1, gvIndex - 1].forEach(function(k){
+    const q = albumAll[(k + albumAll.length) % albumAll.length];
+    if (!q) return;
+    const im = new Image();
+    im.src = ALBUM_DIR + 'photo-' + q[0] + '.jpg';
+  });
 }
 function hidePhoto(){
   galViewer.classList.remove('open');
@@ -3586,6 +4179,292 @@ $('#galLetter').addEventListener('click', function(){ sfxTap(); go('letter'); })
 $('#finaleMore').addEventListener('click', function(){ sfxTap(); go('gallery'); });
 
 /* ============================================================
+   THE SKY WE SHARE — night epilogue
+   ============================================================ */
+const LATER_NOTES = {
+  miss: {
+    title: 'you miss me',
+    body: 'Look at the moon for a second. I\u2019m probably looking at it too \u2014 I always check, just in case you are. Distance is just a number I\u2019m patiently ignoring.'
+  },
+  heavy: {
+    title: 'the day is heavy',
+    body: 'You don\u2019t have to be okay right now. Put it down for a minute, breathe, and let me carry the rest. I\u2019m not going anywhere.'
+  },
+  sleep: {
+    title: 'you can\u2019t sleep',
+    body: 'Think of the quietest day we\u2019ve had \u2014 the one with nothing special in it. That\u2019s still my favourite kind of day, because you were in it. Goodnight, my love.'
+  }
+};
+const SKY_PENTA = [523.25, 587.33, 659.25, 783.99, 880, 1046.5];
+
+/* what's inside the gift box — edit these freely */
+const WISHES = [
+  'going to all disneyland together',
+  'watch the sunrise around the world together',
+  'cook something together without any thoughts',
+  'Just wandering around aimlessly with you, without a single thing on our mind.'
+];
+
+/* a tiny four-point sparkle, stays crisp at small sizes */
+function sparkSVG(size, color){
+  return '<svg viewBox="0 0 40 40" width="' + size + '" height="' + size + '" aria-hidden="true">'
+    + '<path d="M20 2.5c1.5 9.2 4.4 12.1 13.5 13.5C24.4 17.4 21.5 20.3 20 29.5c-1.5-9.2-4.4-12.1-13.5-13.5C15.6 14.6 18.5 11.7 20 2.5Z" fill="' + color + '"/>'
+    + '<path d="M20 24.8c.6 3.6 1.7 4.7 5.3 5.3-3.6.6-4.7 1.7-5.3 5.3-.6-3.6-1.7-4.7-5.3-5.3 3.6-.6 4.7-1.7 5.3-5.3Z" fill="' + color + '" opacity=".55"/>'
+    + '</svg>';
+}
+
+function buildSky(){
+  const field = $('#skyField');
+  if (!field) return;
+
+  let html = '<div class="skyVeil"></div>';
+  for (let i = 0; i < 120; i++){
+    const s = (0.8 + Math.random() * 1.9).toFixed(2);
+    html += '<i class="skyStar" style="left:' + (Math.random() * 100).toFixed(2)
+      + '%;top:' + (Math.random() * 100).toFixed(2)
+      + '%;width:' + s + 'px;height:' + s + 'px;--tw:' + (3 + Math.random() * 5).toFixed(1)
+      + 's;--td:-' + (Math.random() * 8).toFixed(1) + 's"></i>';
+  }
+  for (let i = 0; i < 8; i++){
+    html += '<span class="skySpark" style="left:' + (5 + Math.random() * 90).toFixed(2)
+      + '%;top:' + (4 + Math.random() * 80).toFixed(2)
+      + '%;--tw:' + (5 + Math.random() * 4).toFixed(1)
+      + 's;--td:-' + (Math.random() * 7).toFixed(1) + 's">\u2726</span>';
+  }
+  field.innerHTML = html;
+
+  // the constellation: a heart drawn from stars
+  const raw = [];
+  for (let i = 0; i < 40; i++){
+    const t = i / 40 * Math.PI * 2;
+    const x = 16 * Math.pow(Math.sin(t), 3);
+    const y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+    raw.push([x, y]);
+  }
+  const xs = raw.map(function(p){ return p[0]; });
+  const ys = raw.map(function(p){ return p[1]; });
+  const minX = Math.min.apply(null, xs), maxX = Math.max.apply(null, xs);
+  const minY = Math.min.apply(null, ys), maxY = Math.max.apply(null, ys);
+  const boxW = 330, boxH = 286, cx = 400, cy = 194;
+  const k = Math.min(boxW / (maxX - minX), boxH / (maxY - minY));
+  const pts = raw.map(function(p){
+    return [
+      +(cx + (p[0] - (minX + maxX) / 2) * k).toFixed(1),
+      +(cy + (p[1] - (minY + maxY) / 2) * k).toFixed(1)
+    ];
+  });
+  const line = pts.map(function(p){ return p.join(','); }).join(' ');
+  const stars = pts.map(function(p, i){
+    const r = i % 5 === 0 ? 3 : (i % 3 === 0 ? 2.2 : 1.6);
+    return '<circle class="skyHeartStar" cx="' + p[0] + '" cy="' + p[1] + '" r="' + r + '"'
+      + ' style="animation:skyTw ' + (3.2 + (i % 7) * .5).toFixed(1) + 's ease-in-out infinite;animation-delay:-'
+      + ((i % 9) * .45).toFixed(2) + 's"></circle>';
+  }).join('');
+
+  $('#skyArt').innerHTML =
+    '<defs>'
+    + '<filter id="skyGlowF" x="-300%" y="-300%" width="700%" height="700%">'
+    + '<feGaussianBlur stdDeviation="2.2" result="b"/>'
+    + '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
+    + '</filter>'
+    + '<radialGradient id="skyCenterFade" cx="50%" cy="50%" r="50%">'
+    + '<stop offset="0%" stop-color="#f3d9b4" stop-opacity=".07"/>'
+    + '<stop offset="100%" stop-color="#f3d9b4" stop-opacity="0"/>'
+    + '</radialGradient>'
+    + '</defs>'
+    + '<circle cx="400" cy="194" r="182" fill="url(#skyCenterFade)"/>'
+    + '<polyline class="skyHeartLine" points="' + line + '"/>'
+    + stars
+    + '<text x="400" y="447" text-anchor="middle" font-family="Great Vibes, Parisienne, cursive" font-size="78" fill="#f7e6cf" opacity=".96">' + CONFIG.her + '</text>'
+    + '<text x="400" y="486" text-anchor="middle" font-family="Jost, sans-serif" font-size="9.5" letter-spacing="5.5" fill="#c2a78d">MY FAVOURITE CONSTELLATION</text>';
+
+  const lf = $('#laterFlower');
+  if (lf) lf.innerHTML = sparkSVG(24, '#e0bd8a');
+
+  const gf = $('#giftFlower');
+  if (gf) gf.innerHTML = sparkSVG(26, '#cfa871');
+
+  const cw = $('#wishList');
+  if (cw){
+    cw.innerHTML = WISHES.map(function(w, i){
+      return '<div class="row"><span class="n">0' + (i + 1) + '</span>'
+        + '<span class="w">' + w + '</span></div>';
+    }).join('');
+  }
+
+  // tiny sky for the menu panel
+  const mini = $('#skyMini');
+  if (mini){
+    let m = '';
+    for (let i = 0; i < 30; i++){
+      const s = (Math.random() * 1.4 + .8).toFixed(1);
+      m += '<i style="position:absolute;left:' + (Math.random() * 100).toFixed(1)
+        + '%;top:' + (Math.random() * 100).toFixed(1) + '%;width:' + s + 'px;height:' + s
+        + 'px;border-radius:50%;background:#f4dfc0;opacity:' + (.3 + Math.random() * .55).toFixed(2) + '"></i>';
+    }
+    m += '<svg style="position:absolute;right:9px;top:12px;width:40px;height:40px;opacity:.5" viewBox="0 0 24 24" fill="none" stroke="#e8cda3" stroke-width="1">'
+      + '<path d="M12 20.4s-7.2-4.7-7.2-9.6A3.95 3.95 0 0 1 12 8a3.95 3.95 0 0 1 7.2 2.8c0 4.9-7.2 9.6-7.2 9.6Z"/></svg>';
+    m += '<svg style="position:absolute;left:10px;bottom:8px;width:26px;height:26px;opacity:.28" viewBox="0 0 24 24" fill="none" stroke="#f4dfc0" stroke-width="1">'
+      + '<path d="M12 3v18M3 12h18M6.2 6.2l11.6 11.6M17.8 6.2 6.2 17.8"/></svg>';
+    mini.innerHTML = m;
+  }
+}
+
+function skyTwinkle(x, y){
+  const stage = $('#skyStage');
+  if (!stage) return;
+  const s = document.createElement('span');
+  s.className = 'skyTap';
+  s.textContent = '\u2726';
+  s.style.left = x + 'px';
+  s.style.top = y + 'px';
+  stage.appendChild(s);
+  setTimeout(function(){ s.remove(); }, 1100);
+  note(SKY_PENTA[Math.floor(Math.random() * SKY_PENTA.length)], .55, .013, 'sine');
+}
+
+function shootingStar(){
+  const layer = $('#skyShootLayer');
+  if (!layer) return;
+  const s = document.createElement('span');
+  s.className = 'shoot';
+  s.style.left = (-12 + Math.random() * 18) + 'vw';
+  s.style.top = (4 + Math.random() * 34) + 'vh';
+  s.style.animationDuration = (1.1 + Math.random() * .5).toFixed(2) + 's';
+  layer.appendChild(s);
+  setTimeout(function(){ s.remove(); }, 2100);
+}
+
+function skyDust(x, y, n){
+  for (let i = 0; i < n; i++){
+    const d = document.createElement('span');
+    d.className = 'skyDust';
+    d.style.left = x + 'px';
+    d.style.top = y + 'px';
+    const a = Math.random() * Math.PI * 2;
+    const r = 40 + Math.random() * 120;
+    d.style.setProperty('--tx', (Math.cos(a) * r).toFixed(0) + 'px');
+    d.style.setProperty('--ty', (Math.sin(a) * r - 30).toFixed(0) + 'px');
+    d.style.animationDuration = (.7 + Math.random() * .5).toFixed(2) + 's';
+    d.style.animationDelay = (Math.random() * .15).toFixed(2) + 's';
+    document.body.appendChild(d);
+    setTimeout(function(){ d.remove(); }, 1600);
+  }
+}
+
+let wishCount = 0;
+const wishBtn = $('#wishBtn');
+if (wishBtn){
+  wishBtn.addEventListener('click', function(){
+    wishCount++;
+    sfxChime();
+    shootingStar();
+    setTimeout(shootingStar, 420);
+    const r = wishBtn.getBoundingClientRect();
+    skyDust(r.left + r.width / 2, r.top + r.height / 2, 26);
+    const heart = $('#skyArt');
+    if (heart){
+      const hr = heart.getBoundingClientRect();
+      skyDust(hr.left + hr.width * .5, hr.top + hr.height * .34, 18);
+    }
+    const line = $('#wishLine');
+    if (line){
+      line.textContent = wishCount === 1
+        ? 'I already know what I\u2019d wish for. It\u2019s you \u2014 every single year.'
+        : 'Keep wishing. I\u2019ll keep being the answer.';
+      line.classList.add('on');
+    }
+    wishBtn.innerHTML = 'wish again <span class="sp">\u2726</span>';
+  });
+}
+
+const skyStage = $('#skyStage');
+if (skyStage){
+  skyStage.addEventListener('pointerdown', function(e){
+    const r = skyStage.getBoundingClientRect();
+    skyTwinkle(e.clientX - r.left, e.clientY - r.top);
+  });
+  skyStage.addEventListener('keydown', function(e){
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    e.preventDefault();
+    const r = skyStage.getBoundingClientRect();
+    skyTwinkle(r.width / 2, r.height / 2);
+  });
+}
+
+const laterPop = $('#laterPop');
+function openLater(key){
+  const n = LATER_NOTES[key];
+  if (!n || !laterPop) return;
+  $('#laterTitle').textContent = n.title;
+  $('#laterBody').textContent = n.body;
+  laterPop.classList.add('open');
+  laterPop.setAttribute('aria-hidden', 'false');
+  setTimeout(function(){ $('#laterCard').focus(); }, 60);
+}
+function closeLater(){
+  if (!laterPop) return;
+  laterPop.classList.remove('open');
+  laterPop.setAttribute('aria-hidden', 'true');
+}
+$('#laterNotes').addEventListener('click', function(e){
+  const b = e.target.closest('[data-later]');
+  if (!b) return;
+  sfxTap();
+  openLater(b.dataset.later);
+});
+$('#laterClose').addEventListener('click', function(){ sfxTap(); closeLater(); });
+laterPop.addEventListener('click', function(e){ if (e.target === laterPop) closeLater(); });
+
+/* the gift box at the very end */
+const giftPop = $('#giftPop');
+const giftBox = $('#giftBox');
+function openGift(){
+  if (!giftPop) return;
+  giftPop.classList.add('open');
+  giftPop.setAttribute('aria-hidden', 'false');
+  setTimeout(function(){ $('#giftCard').focus(); }, 60);
+}
+function closeGift(){
+  if (!giftPop) return;
+  giftPop.classList.remove('open');
+  giftPop.setAttribute('aria-hidden', 'true');
+}
+if (giftBox){
+  giftBox.addEventListener('click', function(){
+    if (giftBox.classList.contains('open')){
+      sfxTap();
+      openGift();
+      return;
+    }
+    giftBox.classList.add('open');
+    sfxPop();
+    note(523.25, .5, .04, 'sine', .06);
+    note(783.99, .6, .03, 'sine', .18);
+    const r = giftBox.getBoundingClientRect();
+    skyDust(r.left + r.width / 2, r.top + r.height * .28, 22);
+    setTimeout(openGift, 620);
+  });
+}
+if (giftPop){
+  $('#giftClose').addEventListener('click', function(){ sfxTap(); closeGift(); });
+  giftPop.addEventListener('click', function(e){ if (e.target === giftPop) closeGift(); });
+}
+$('#giftRestart').addEventListener('click', function(){
+  sfxTap();
+  closeGift();
+  go('cake');
+});
+
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape'){ closeLater(); closeGift(); }
+});
+
+$('#galStars').addEventListener('click', function(){ sfxTap(); go('stars'); });
+$('#skyBack').addEventListener('click', function(){ sfxTap(); go('gallery'); });
+$('#skyLetter').addEventListener('click', function(){ sfxTap(); go('letter'); });
+
+/* ============================================================
    BOOT
    ============================================================ */
 function boot(){
@@ -3610,6 +4489,7 @@ function boot(){
   buildReasons();
   buildTracks();
   buildGallery();
+  buildSky();
   const noteFlower = $('#noteFlower');
   if (noteFlower) noteFlower.innerHTML = flowerSVG('peony', 44, 1601, 'blush');
   updateSoundBtn();
@@ -3628,6 +4508,37 @@ function boot(){
     setTimeout(function(){ go(hash); }, 350);
   }
 }
+/* ============================================================
+   CURSOR PETALS (desktop, very subtle)
+   ============================================================ */
+(function(){
+  let fine = false, still = false;
+  try { fine = window.matchMedia('(pointer:fine)').matches; } catch(e){}
+  try { still = window.matchMedia('(prefers-reduced-motion:reduce)').matches; } catch(e){}
+  if (!fine || still) return;
+  let last = 0, live = 0;
+  const tones = ['pink', 'blush', 'cream'];
+  document.addEventListener('mousemove', function(e){
+    if (!unlocked || live > 12) return;
+    const now = Date.now();
+    if (now - last < 130) return;
+    last = now;
+    const size = 9 + Math.random() * 7;
+    const p = document.createElement('span');
+    p.className = 'cursorPetal';
+    p.style.left = e.clientX + 'px';
+    p.style.top = e.clientY + 'px';
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.setProperty('--dx', ((Math.random() * 2 - 1) * 26).toFixed(0) + 'px');
+    p.style.setProperty('--r0', ((Math.random() * 2 - 1) * 50).toFixed(0) + 'deg');
+    p.innerHTML = flowerSVG('petals', size, 2600 + Math.floor(Math.random() * 700), tones[(Math.random() * tones.length) | 0]);
+    document.body.appendChild(p);
+    live++;
+    setTimeout(function(){ p.remove(); live--; }, 1200);
+  }, { passive: true });
+})();
+
 boot();
 </script>
 </body>
